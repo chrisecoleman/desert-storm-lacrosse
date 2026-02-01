@@ -252,6 +252,170 @@
             font-weight: 600;
             letter-spacing: 0.05em;
         }
+
+        /* ===== ANIMATIONS ===== */
+
+        /* Keyframe definitions */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(244, 185, 66, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(244, 185, 66, 0.8), 0 0 60px rgba(244, 185, 66, 0.4);
+            }
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(244, 185, 66, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(244, 185, 66, 0.6), 0 0 45px rgba(244, 185, 66, 0.2);
+            }
+        }
+
+        /* Apply animations to slide elements when active */
+        .slide.active .logo-container {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+
+        .slide.active .title-main {
+            animation: fadeInUp 0.7s ease-out 0.2s both, glowPulse 3s ease-in-out 1.5s infinite;
+        }
+
+        .slide.active .subtitle {
+            animation: fadeInUp 0.7s ease-out 0.4s both;
+        }
+
+        .slide.active .tagline {
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .slide.active .tagline-sub {
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .slide.active .section-number {
+            animation: fadeIn 0.5s ease-out both;
+        }
+
+        .slide.active .section-title {
+            animation: fadeInUp 0.6s ease-out 0.15s both;
+        }
+
+        .slide.active .bullet-item {
+            animation: slideInLeft 0.5s ease-out both;
+        }
+
+        .slide.active .bullet-item:nth-child(1) { animation-delay: 0.3s; }
+        .slide.active .bullet-item:nth-child(2) { animation-delay: 0.45s; }
+        .slide.active .bullet-item:nth-child(3) { animation-delay: 0.6s; }
+        .slide.active .bullet-item:nth-child(4) { animation-delay: 0.75s; }
+        .slide.active .bullet-item:nth-child(5) { animation-delay: 0.9s; }
+        .slide.active .bullet-item:nth-child(6) { animation-delay: 1.05s; }
+
+        .slide.active .highlight-box {
+            animation: scaleIn 0.6s ease-out 0.4s both, borderGlow 2.5s ease-in-out 1.2s infinite;
+        }
+
+        .slide.active .two-columns .column:first-child {
+            animation: slideInLeft 0.6s ease-out 0.3s both;
+        }
+
+        .slide.active .two-columns .column:last-child {
+            animation: slideInRight 0.6s ease-out 0.5s both;
+        }
+
+        .slide.active .cost-highlight {
+            animation: scaleIn 0.7s ease-out 0.5s both, glowPulse 2.5s ease-in-out 1.5s infinite;
+        }
+
+        .slide.active .content {
+            animation: fadeIn 0.4s ease-out both;
+        }
+
+        /* Smooth slide transitions */
+        .slide {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Nav button enhanced hover */
+        .nav-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-btn:hover {
+            background: var(--gold-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(244, 185, 66, 0.4);
+        }
+
+        .nav-btn:active {
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
